@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P2P Chatroom</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+  <!-- Header section -->
+  <nav id="header">
+    <a href="index.html">
+      <p id="logo"></p>
+    </a>
+    <div id="room-id"></div>
+    <div id="room-link-wrapper">
+      <input type="text" value="" id="room-link-input" readonly />
+      <button class="button" onclick="copyToClipboard()">
+        <i class="icon icon-copy"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Stream section -->
+  <section id="streams-container"></section>
+
+  <!-- Controllers section -->
+  <section class="controllers">
+    <button id="button-audio" class="button active" onclick="toggleControl('audio')">
+      <i class="icon icon-audio"></i>
+    </button>
+    <button id="button-video" class="button active" onclick="toggleControl('video')">
+      <i class="icon icon-video"></i>
+    </button>
+    <button class="button disabled" onclick="leaveRoom()">
+      <i class="icon icon-exit"></i>
+    </button>
+  </section>
+
+</body>
+<script src="js/AgoraRTC_N-4.16.0.js"></script>
+<script src="js/api.js"></script>
+<script src="https://cdn.socket.io/4.5.4/socket.io.min.js" crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/room.js"></script>
+</html>
